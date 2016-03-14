@@ -1,0 +1,88 @@
+<div class="container-fluid main-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="widget-container stats-container">
+                <div class="col-md-9">
+                    <div class="number">
+                        <div class="icon visitors"></div>
+                        {{student.name}} &nbsp;&nbsp;&nbsp;{{student.email}}
+                    </div>
+                    <div class="text">
+                        Info
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="number">
+                        <div class="icon globe"></div>
+                        {{hours()}}
+                        <small>Hours</small>
+                    </div>
+                    <div class="text">
+                        All Hours
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget-container fluid-height clearfix">
+                <div class="widget-content padded clearfix">
+                    <div ng-repeat="pt in student.pt">
+                        <h1 STYLE="color: #007aff">{{pt.term.name}}</h1>
+
+                        <div class="col-xs-12">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <th>
+                                        id
+                                    </th>
+                                    <th>
+                                        name
+                                    </th>
+                                    <th>
+                                        grade
+                                    </th>
+                                    <th>
+                                        state
+                                    </th>
+                                    <th>
+                                        hour
+                                    </th>
+                                    <th>
+                                        maxGrade
+                                    </th>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="s in pt.ps">
+                                        <td>
+                                            {{s.subject.id}}
+                                        </td>
+                                        <td>
+                                            {{s.subject.name}}
+                                        </td>
+                                        <td>
+                                            {{s.grade}}
+                                        </td>
+                                        <td>
+                                            {{s.state}}
+                                        </td>
+                                        <td>
+                                            {{s.subject.hour}}
+                                        </td>
+                                        <td>
+                                            {{s.subject.maxGrade}}
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

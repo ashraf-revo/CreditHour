@@ -1,0 +1,63 @@
+<div class="container-fluid main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget-container fluid-height clearfix">
+
+                <div class="widget-content padded clearfix">
+                    <div class="col-xs-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                <th>
+                                    id
+                                </th>
+                                <th>
+                                    name
+                                </th>
+                                <th>
+                                    maxHour
+                                </th>
+                                <th>
+                                    minHour
+                                </th>
+                                <th>
+                                    createdDate
+                                </th>
+                                <th>
+                                    enabled
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="p in pt">
+                                    <td>
+                                        {{p.id}}
+                                    </td>
+                                    <td>
+                                        {{p.term.name}}
+                                    </td>
+                                    <td>
+                                        {{p.term.maxHour}}
+                                    </td>
+                                    <td>
+                                        {{p.term.minHour}}
+                                    </td>
+                                    <td>
+                                        {{p.term.createdDate}}
+                                    </td>
+                                    <td>
+                                        {{p.term.enabled}}
+                                    </td>
+                                    <td>
+                                        <a ng-class="p.term.enabled==true?'btn btn-success':'disabled btn btn-danger'"
+                                           href="javascript:void(0)" ng-click="load(p)">Load</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

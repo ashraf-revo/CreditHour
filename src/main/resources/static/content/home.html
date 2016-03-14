@@ -1,0 +1,36 @@
+<div class=" page-header-fixed bg-1">
+    <div class="modal-shiftfix">
+        <div class="navbar navbar-fixed-top scroll-hide">
+            <div class="container-fluid top-bar">
+                <div class="pull-right">
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown user hidden-xs">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="">
+                                <img width="34" height="34" ng-src="{{cdnLocation}}assest/images/avatar-male.jpg">
+                                {{account.email}} <b class="caret">
+                            </b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a ui-sref="profile" has-role="ROLE_STUDENT">
+                                        <i class="fa fa-home"></i>Profile
+                                    </a>
+                                    <a ui-sref="settings" has-role="ROLE_SETTINGS">
+                                        <i class="fa fa-home"></i>Settings
+                                    </a>
+                                    <a href="" ng-click="logout()">
+                                        <i class="fa fa-sign-out"></i>Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span
+                        class="icon-bar"></span></button>
+                <a class="logo" ui-sref="home">Credit Hour</a>
+            </div>
+            <div ui-view="homeNavbar"></div>
+        </div>
+        <div ui-view="homeContent"></div>
+    </div>
+</div>

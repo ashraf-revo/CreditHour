@@ -1,0 +1,90 @@
+<div class="container-fluid main-content">
+    <div class="row">
+        <form ng-submit="save()" id="validate-form"
+              style="margin-left: 25%;margin-right: auto; display: block;">
+            <fieldset>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">name</label>
+                            <input ng-model="form.name" class="form-control" id="name" name="name" type="text"
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hour">hour</label>
+                            <input ng-model="form.hour" class="form-control" id="hour" name="hour"
+                                   type="number" required
+                                   maxlength="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="maxGrade">maxGrade</label>
+                            <input ng-model="form.maxGrade" class="form-control" id="maxGrade"
+                                   name="maxGrade" type="number"
+                                   maxlength="3" required>
+                        </div>
+                    </div>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Save">
+            </fieldset>
+        </form>
+        <div class="col-md-12">
+            <div class="form-group" class="col-md-6">
+                <label for="searchText">Search</label>
+                <input ng-model="searchText" id="searchText" class="form-control">
+            </div>
+            <div class="widget-container fluid-height clearfix">
+                <div class="widget-content padded clearfix">
+                    <div class="col-xs-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                <th>
+                                    id
+                                </th>
+                                <th>
+                                    name
+                                </th>
+                                <th>
+                                    hour
+                                </th>
+                                <th>
+                                    required
+                                </th>
+                                <th>
+                                    maxGrade
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="s in subject | filter:searchText">
+                                    <td>
+                                        {{s.id}}
+                                    </td>
+                                    <td>
+                                        {{s.name}}
+                                    </td>
+                                    <td>
+                                        {{s.hour}}
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)" ng-click="change(s)">Change </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span ng-repeat="r in s.required">{{r.name}} &nbsp;&nbsp;</span>
+                                    </td>
+                                    <td>
+                                        {{s.maxGrade}}
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)" ng-click="delete(s)">Delete</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)" ng-click="update(s)">Update</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

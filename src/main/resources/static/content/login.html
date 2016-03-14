@@ -1,0 +1,38 @@
+<div class="login2"  style="margin-top: 80px">
+    <div class="login-wrapper">
+        <h1>
+            <a ui-sref="login">Credit Hour</a>
+        </h1>
+        <form>
+            <div class="form-group">
+                <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-envelope"></i>
+                </span>
+                    <input ng-model="username" name="username" class="form-control"
+                           placeholder="Username or Email" type="text">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-lock"></i>
+                </span>
+                    <input ng-model="password" name="password" class="form-control" placeholder="Password" type="password">
+                </div>
+            </div>
+            <div class="text-left">
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="rememberMe" name="rememberMe"><span>Keep me logged in</span>
+                </label>
+            </div>
+            <input ng-click="submit()" class="btn btn-lg btn-primary btn-block" type="submit" value="Log in">
+        </form>
+        <p>
+            Don't have an account yet?
+        </p>
+        <a class="btn btn-default-outline btn-block" ui-sref="register">
+            Register
+        </a>
+    </div>
+</div>

@@ -1,0 +1,130 @@
+<div class="container-fluid main-content">
+    <div class="row">
+        <div class="widget-container fluid-height clearfix">
+            <div class="widget-content padded clearfix">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="widget-container fluid-height">
+                            <div class="heading tabs">
+                                <i class="fa fa-sitemap"></i>
+                                <ul class="nav nav-tabs pull-right" data-tabs="tabs" id="tabs">
+                                    <li class="active">
+                                        <a data-toggle="tab">
+                                            <i class="fa fa-comments">
+                                            </i>
+                                            <span>Info</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content padded" id="my-tab-content">
+                                <div class="tab-pane active">
+                                    <div class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="name" class="col-sm-2 control-label">
+                                                Name
+                                            </label>
+
+                                            <div class="col-sm-10">
+                                                <label id="name" class="col-sm-2 control-label">
+                                                    {{admin.name}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email" class="col-sm-2 control-label">
+                                                Email
+                                            </label>
+
+                                            <div class="col-sm-10">
+                                                <label id="email" class="col-sm-2 control-label">
+                                                    {{admin.email}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="studentCount" class="col-sm-2 control-label">
+                                                Student Count
+                                            </label>
+
+                                            <div class="col-sm-10">
+                                                <label id="studentCount" class="control-label">
+                                                    {{admin.studentCount}}
+                                                </label>
+                                                <label class="control-label">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Max Students is
+                                                    {{(admin.plane*admin.rate)}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="studentCount" class="col-sm-2 control-label">
+                                                Last Payment
+                                            </label>
+
+
+                                            <div class="col-sm-10">
+                                                <label id="lastPayment" class="control-label">
+                                                    {{admin.lastPayment}} &nbsp;&nbsp;&nbsp; it will work to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    {{admin.lastPaymentPlus1.getFullYear()}}-{{admin.lastPaymentPlus1.getMonth()+1}}-{{admin.lastPaymentPlus1.getDate()}}
+
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="plane" class="col-sm-2 control-label">
+                                                Plane
+                                            </label>
+
+                                            <div class="col-sm-5">
+                                                <input type="number" class="col-md-4 form-control" id="plane"
+                                                       min="{{minPlane()}}"
+                                                       ng-model="admin.plane">
+                                            </div>
+                                            <label class=" control-label" ng-show="!IsNewYear()">
+                                                <h4>
+                                                    {{ScaleCost()}}<span>/Year</span>
+                                                    <a ng-class="IsScaleDisable()?'btn btn-xs btn-success':'disabled btn btn-xs btn-danger'"
+                                                       href="javascript:void(0)" ng-click="pay('scale')">Scale</a>
+                                                </h4>
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="studentCount" class="col-sm-2 control-label">
+                                            </label>
+
+                                            <div class="col-sm-10">
+                                                <button type="submit" ng-click="pay('pay')" class="btn btn-default">Pay
+                                                    For
+                                                    New Year
+
+                                                </button>
+                                                <label class="control-label" ng-show="!IsNewYear()">
+                                                    we recommend you to pay&nbsp;{{YearCost()}}&nbsp;$&nbsp;for new year
+                                                    in&nbsp;
+                                                    {{admin.lastPaymentPlus1.getFullYear()}}-{{admin.lastPaymentPlus1.getMonth()+1}}-{{admin.lastPaymentPlus1.getDate()}}
+                                                    &nbsp; not now &nbsp;
+                                                </label>
+                                                <label class="control-label" ng-show="IsNewYear()">
+                                                    we recommend you to pay&nbsp;{{YearCost()}}&nbsp;$&nbsp;now for the
+                                                    new
+                                                    year
+                                                </label>
+                                                <label class="control-label">
+                                                    it will work to
+                                                    {{lastPaymentPlus1(0).getFullYear()}}-{{lastPaymentPlus1(0).getMonth()+1}}-{{lastPaymentPlus1(0).getDate()}}
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

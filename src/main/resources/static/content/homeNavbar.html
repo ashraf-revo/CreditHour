@@ -1,0 +1,54 @@
+<div class="container-fluid main-nav clearfix">
+    <div class="nav-collapse">
+        <ul class="nav">
+            <li>
+                <a ui-sref="home"><span aria-hidden="true" class="hightop-home"></span>Home</a>
+            </li>
+            <li has-role="ROLE_ADMIN" class="dropdown ">
+                <a data-toggle="dropdown" class="current" href="">
+                    <span aria-hidden="true" class="hightop-tables"></span>Subject<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="current" ui-sref="subject">Subject</a>
+                    </li>
+                </ul>
+            </li>
+            <li has-role="ROLE_ADMIN" class="dropdown ">
+                <a data-toggle="dropdown" class="current" href="">
+                    <span aria-hidden="true" class="hightop-tables"></span>Student<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="current" ui-sref="student">Student</a>
+                    </li>
+                </ul>
+            </li>
+            <li has-role="ROLE_ADMIN" class="dropdown ">
+                <a data-toggle="dropdown" class="dropdown-toggle current" href="">
+                    <span aria-hidden="true" class="hightop-tables"></span>Term<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="current" ui-sref="term">Term</a>
+                    </li>
+                </ul>
+            </li>
+            <li has-role="ROLE_STUDENT" class="dropdown ">
+                <a data-toggle="dropdown" class="current" href="">
+                    <span aria-hidden="true" class="hightop-tables"></span>Subject<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="current" ui-sref="availablesubject">Subject</a>
+                    </li>
+                </ul>
+            </li>
+            <li has-role="ROLE_STUDENT" class="dropdown ">
+                <a data-toggle="dropdown" class="current" href="">
+                    <span aria-hidden="true" class="hightop-tables"></span>Term<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="current" ui-sref="availableterm">Term</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

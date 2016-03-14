@@ -1,0 +1,12 @@
+---
+applications:
+- name: credithour
+  memory: 1G
+  instances: 1
+  host: credithour
+  buildpack: java_buildpack
+  path: target/CreditHour-0.0.1.RELEASE.jar
+  services:
+    - credithour
+  env:
+    SPRING_PROFILES_ACTIVE: bluemix,init

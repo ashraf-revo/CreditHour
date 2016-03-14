@@ -1,0 +1,32 @@
+<div style="margin-top: -80px">
+    <div class="modal-header">
+        <h4 class="modal-title"><span class="glyphicon glyphicon-star"></span> Update {{form.name}}</h4>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget-content padded clearfix">
+                <div class="widget-container scrollable list task-widget">
+                    <div class="widget-content">
+                        <ul ng-repeat="d in all">
+                            <li>
+                                <label ng-hide="d.id==form.id">
+                                    <input  class="task-input" type="checkbox" name="subject" value="{{d}}" ng-model="d.selected"  ng-change="selectChange()">
+                                    <span></span>
+                                    <div class="label label-success pull-right">
+                                        {{d.id}}
+                                    </div>
+                                    {{d.name}}</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="save()">Done</button>
+        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+    </div>
+</div>

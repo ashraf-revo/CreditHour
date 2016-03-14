@@ -1,0 +1,23 @@
+<style>
+    body {
+        background-color: #007aff;
+    }
+</style>
+<div class="fourofour" style="margin-top: 350px">
+    <div class="fourofour-container">
+        <h1 style="font-size: 100px">
+            Activation
+        </h1>
+
+        <h3>
+            <div class="alert" ng-show="success">
+                <strong>Your user has been activated.</strong> Please <a style="color: #F90DB9" ui-sref="login">Login</a>.
+            </div>
+
+            <div class="alert" ng-show="error">
+                <strong>Your user could not be activated.</strong> Please use the registration form to<a style="color: #F90DB9" ui-sref="register"> Register</a>.
+            </div>
+        </h3>
+        <a class="btn btn-lg btn-default-outline" ui-sref="login"><i class="fa fa-home"></i>Go to the homepage</a>
+    </div>
+</div>

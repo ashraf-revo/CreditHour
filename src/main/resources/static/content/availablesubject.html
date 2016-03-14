@@ -1,0 +1,53 @@
+<div class="container-fluid main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget-container fluid-height clearfix">
+
+                <div class="widget-content padded clearfix">
+                    <div class="col-xs-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                <th>
+                                    id
+                                </th>
+                                <th>
+                                    name
+                                </th>
+                                <th>
+                                    hour
+                                </th>
+                                <th>
+                                    required
+                                </th>
+                                <th>
+                                    maxGrade
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="s in subject">
+                                    <td>
+                                        {{s.id}}
+                                    </td>
+                                    <td>
+                                        {{s.name}}
+                                    </td>
+                                    <td>
+                                        {{s.hour}}
+                                    </td>
+                                    <td>
+                                        <span ng-repeat="r in s.required">{{r.name}} &nbsp;&nbsp;</span>
+                                    </td>
+                                    <td>
+                                        {{s.maxGrade}}
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+<div class="container-fluid main-content">
+    <div class="row">
+        <form ng-submit="save()" id="validate-form" novalidate="novalidate"
+              style="margin-left: 25%;margin-right: auto; display: block;">
+            <fieldset>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input ng-model="form.name" class="form-control" id="name" name="name" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="minHour">MinHour</label>
+                            <input ng-model="form.minHour" class="form-control" id="minHour"
+                                   name="minHour" type="number"
+                                   maxlength="3" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="maxHour">MaxHour</label>
+                            <input ng-model="form.maxHour" class="form-control" id="maxHour" value="20"
+                                   name="maxHour" type="number"
+                                   maxlength="3" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="enabled">Enable</label>
+                            <select ng-model="form.enabled" name="enabled" class="form-control" id="enabled">
+                                <option value="true">true</option>
+                                <option value="false">false</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Save">
+            </fieldset>
+        </form>
+
+        <div class="form-inline" id="fileForm" style="margin-left: 25%;margin-right: auto; display: block;">
+            <div class="form-group">
+                <div class="fileUpload btn btn-danger">
+                    <span>Select Xls</span>
+                    <input type="file" class="upload" id="file" file-model="form.file"/>
+                </div>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Upload Grades File" ng-click="uplodeGrades()">
+            <a target="_blank" href="api/admin/files/grades/xlsx" class="btn-link btn-danger">Download Grades File Example</a>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group" class="col-md-6">
+                <label for="searchText">Search</label>
+                <input ng-model="searchText" id="searchText" class="form-control">
+            </div>
+            <div class="widget-container fluid-height clearfix">
+                <div class="widget-content padded clearfix">
+                    <div class="col-xs-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                <th>
+                                    id
+                                </th>
+                                <th>
+                                    name
+                                </th>
+                                <th>
+                                    student
+                                </th>
+                                <th>
+                                    maxHour
+                                </th>
+                                <th>
+                                    minHour
+                                </th>
+                                <th>
+                                    enabled
+                                </th>
+                                <th>
+                                    createdDate
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="i in term | filter:searchText">
+                                    <td>
+                                        <a ui-sref="statics({id:i.id})">Statics</a>
+                                    </td>
+                                    <td>
+                                        {{i.name}}
+                                    </td>
+                                    <td>
+                                        <a ui-sref="studentterm({term:i.id})">student</a>
+                                    </td>
+                                    <td>
+                                        {{i.maxHour}}
+                                    </td>
+                                    <td>
+                                        {{i.minHour}}
+                                    </td>
+                                    <td>
+                                        {{i.enabled}}
+                                    </td>
+                                    <td>
+                                        {{i.createdDate}}
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)" ng-click="delete(i)">Delete</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)" ng-click="update(i)">Update</a>
+                                    </td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

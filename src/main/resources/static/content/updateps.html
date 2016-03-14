@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h4 class="modal-title"><span class="glyphicon glyphicon-star"></span> Update {{ps.subject.name}}</h4>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="grade">Grade</label>
+            <input class="form-control" id="grade" ng-model="ps.grade" name="grade" type="number"
+                   maxlength="3" required>
+        </div>
+        <div class="form-group">
+            <label for="state">State</label>
+            <select ng-model="ps.state" name="state" class="form-control" id="state">
+                <option value="success">success</option>
+                <option value="fail">fail</option>
+                <option value="non">non</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="save()">Done</button>
+    <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+</div>

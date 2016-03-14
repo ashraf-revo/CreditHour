@@ -1,0 +1,86 @@
+<div class="container-fluid main-content">
+    <div class="row">
+        <form ng-submit="save()" id="validate-form" novalidate="novalidate"
+              style="margin-left: 25%;margin-right: auto; display: block;">
+            <fieldset>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input ng-model="form.name" class="form-control" id="name" name="name" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input ng-model="form.email" class="form-control" id="email" name="email" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input ng-model="form.password" class="form-control" id="password" name="password"
+                                   type="text">
+                        </div>
+                    </div>
+                </div>
+                <input class="btn btn-primary" type="submit" value="Save">
+            </fieldset>
+        </form>
+        <div class="form-inline" id="fileForm"    style="margin-left: 25%;margin-right: auto; display: block;">
+            <div class="form-group">
+                <div class="fileUpload btn btn-danger">
+                    <span>Select Xls</span>
+                    <input type="file" class="upload" id="file" file-model="form.file"/>
+                </div>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Upload Students File" ng-click="uplodeStudents()">
+            <a target="_blank" href="api/admin/files/students/xlsx" class="btn-link btn-danger">Download Students File Example</a>
+        </div>
+
+        <div class="col-md-12">
+            Showing {{student.length}} Student
+            <div class="form-group" class="col-md-6">
+                <label for="searchText">Search</label>
+                <input ng-model="searchText" id="searchText" class="form-control">
+            </div>
+            <div class="widget-container fluid-height clearfix">
+
+                <div class="widget-content padded clearfix">
+                    <div class="col-xs-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                <th>
+                                    Id
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="s in student | filter:searchText">
+                                    <td>
+                                        <a ui-sref="onestudent({id:s.id})">{{s.id}}</a>
+                                    </td>
+                                    <td>
+                                        {{s.name}}
+                                    </td>
+                                    <td>
+                                        {{s.email+"@"+account.email}}
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)" ng-click="delete(s)">Delete &nbsp;&nbsp;&nbsp;
+                                            {{textterm}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)" ng-click="update(s)">Update</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
